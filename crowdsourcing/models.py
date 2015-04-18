@@ -58,6 +58,7 @@ class UserProfile(User):
     #def __init__(self):
         #super().__init__()
 
+
 class Skill(models.Model):
     name = models.CharField(max_length=128)
     description = models.CharField(max_length=512)
