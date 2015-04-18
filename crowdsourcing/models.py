@@ -19,6 +19,8 @@ class Region(models.Model):
     name = models.CharField(max_length=64)
     code = models.CharField(max_length=16)
 
+
+
 class Country(models.Model):
     name = models.CharField(max_length=64)
     code = models.CharField(max_length=8)
@@ -28,7 +30,7 @@ class City(models.Model):
     name = models.CharField(max_length=64)
     country = models.ForeignKey(Country)
 
-class Address(models.Model):
+class Location(models.Model):
     street = models.CharField(max_length=128)
     country = models.ForeignKey(Country)
     city = models.ForeignKey(City)
@@ -40,7 +42,12 @@ class Role(models.Model):
 
 class UserProfile(User):
     gender = models.SmallIntegerField(null=True)
-    address = models.ForeignKey(Address, null=True)
+    location = models.ForeignKey(Location, null=True)
+    language = models.ManyToManyField(Language, through='Language',
+                                      symmetrical=False)
+
+    identification= models.ManyToManyField(Identification, through='Identification',
+                                      symmetrical=False)
     birthday = models.DateField(null=True)
     nationality = models.ManyToManyField(Country)
     verified = models.BooleanField(default=False)
@@ -74,6 +81,14 @@ class Requester(UserProfile):
 class UserRoles(models.Model):
     user_profile = models.ForeignKey(UserProfile)
     role = models.ForeignKey(Role)
+
+class Language(models.Model):
+    name = models.CharField(max_length=64)
+    code = models.CharField(max_length=16)
+
+class Identification(models.Model):
+    name = models.CharField(max_length=64)
+    code = models.CharField(max_length=16)
 
 class Friendship(models.Model):
     user_source = models.ForeignKey(UserProfile, related_name='user_source')
