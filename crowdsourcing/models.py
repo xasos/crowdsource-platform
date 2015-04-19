@@ -43,21 +43,15 @@ class Role(models.Model):
 class UserProfile(User):
     gender = models.SmallIntegerField(null=True)
     location = models.ForeignKey(Location, null=True)
-    language = models.ManyToManyField(Language, through='Language',
-                                      symmetrical=False)
-
-    identification= models.ManyToManyField(Identification, through='Identification',
-                                      symmetrical=False)
     birthday = models.DateField(null=True)
     nationality = models.ManyToManyField(Country)
+    languages = models.ManyToManyField(Language)
     verified = models.BooleanField(default=False)
+    identifications= models.ManyToManyField(Identification)
     picture = models.BinaryField(null=True)
-    friends = models.ManyToManyField('self', through='Friendship',
-                                      symmetrical=False) #through_fields=('user_source','user_target'),
+    friends = models.ManyToManyField('self', through='Friendship',symmetrical=False) 
     roles = models.ManyToManyField(Role, through='UserRoles')
-    #def __init__(self):
-        #super().__init__()
-
+    mobility=models.PositiveIntegerField(default=0)#Assume user does not want to move around
 
 class Skill(models.Model):
     name = models.CharField(max_length=128)
