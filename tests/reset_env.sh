@@ -4,7 +4,9 @@ cur_dir=${PWD##*/}
 if [ ! "$cur_dir" == "crowdsource-platform" ];
 then
 	echo "Run in root directory"
+  exit 1
 fi
+
 # check if inside a virtual environment
 in_env=$(
 python - <<EOF
@@ -35,4 +37,3 @@ virtualenv --no-site-packages venv
 source venv/bin/activate
 
 pip install -r requirements.txt
-
