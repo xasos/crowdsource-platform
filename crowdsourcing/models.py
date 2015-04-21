@@ -19,7 +19,10 @@ class Region(models.Model):
     name = models.CharField(max_length=64)
     code = models.CharField(max_length=16)
 
-
+#use for possible dating scenarios. We might want to know if they are single, looking for love <3
+class Relationship(models.Model):
+    name = models.CharField(max_length=64)
+    code = models.CharField(max_length=16)
 
 class Country(models.Model):
     name = models.CharField(max_length=64)
@@ -43,6 +46,8 @@ class Role(models.Model):
 class UserProfile(User):
     gender = models.SmallIntegerField(null=True)
     location = models.ForeignKey(Location, null=True)
+    #This variable tells us user's dating status.
+    relationship=models.ForeignKey(Relationship,null=True)
     birthday = models.DateField(null=True)
     nationality = models.ManyToManyField(Country)
     languages = models.ManyToManyField(Language)
@@ -51,7 +56,11 @@ class UserProfile(User):
     picture = models.BinaryField(null=True)
     friends = models.ManyToManyField('self', through='Friendship',symmetrical=False) 
     roles = models.ManyToManyField(Role, through='UserRoles')
-    mobility=models.PositiveIntegerField(default=0)#Assume user does not want to move around
+    #This variable tells us how much a user wants to move around a city.
+    mobility=models.PositiveIntegerField(default=0)
+    #This variable tells us how much weight we should give to the user's vote.
+    #The value ranges from 0-1
+    voteWeight=models.FloatField(min_value=0.0, max_value=1.0)
 
 class Skill(models.Model):
     name = models.CharField(max_length=128)
