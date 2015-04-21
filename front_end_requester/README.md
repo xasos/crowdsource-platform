@@ -7,6 +7,7 @@ This folder contains two files:
 
 ##Dashboard Requester
 This dashboard has 6 sections:
+
 1. Dashboard - notifications and initial view of dashboard for requester.
 2. HITs belonging to a particular requester.
   * HIT Tracking
