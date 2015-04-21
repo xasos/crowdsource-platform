@@ -11,10 +11,12 @@ This dashboard has 6 sections:
 2. HITs belonging to a particular requester.
   * HIT Tracking
   * HIT Creation
+
 3. Workers Database - simple display of all workers, their data, reputation and skills.
 4. Finance Tracking - requester can view its own budget and finances according to HITS.
 5. My Activities - for groups that involve social activities (e.g. empathy creation) this would be the page to post relevant activities (tracking).
 6. Help - Any guidelines, rules and support available for the requester.
+
 
 This dashboard contains basic characteristics and can be used to create Worker´s dashboard.
 
