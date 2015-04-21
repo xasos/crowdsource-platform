@@ -18,6 +18,9 @@ This dashboard has 6 sections:
 5. My Activities - for groups that involve social activities (e.g. empathy creation) this would be the page to post relevant activities (tracking).
 6. Help - Any guidelines, rules and support available for the requester.
 
+Preview of Dashboard:
+![GitHub Logo](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewDashboard.png)
+Format: ![Alt Text](url)
 
 This dashboard contains basic characteristics and can be used to create Worker´s dashboard.
 
