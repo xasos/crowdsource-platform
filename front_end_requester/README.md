@@ -19,8 +19,8 @@ This dashboard has 6 sections:
 6. Help - Any guidelines, rules and support available for the requester.
 
 Preview of Dashboard:
-![GitHub Logo](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewDashboard.png)
-Format: ![Alt Text](url)
+![Preview of dashboard](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewDashboard.png)
+
 
 This dashboard contains basic characteristics and can be used to create Worker´s dashboard.
 
@@ -28,5 +28,15 @@ This dashboard contains basic characteristics and can be used to create Worker´
 
 ##Requester Profile
 Contains a simple login page and a possible profile page for the Requester/Worker. This page contains,bio info, contact info, social networking, past projects, personal information, github feed. 
+
+Preview of Login:
+![Preview Login](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewLogin.png)
+
+
+Preview of Profile:
+![Preview Profile](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewProfile.png)
+
+
+
 
 *Any suggestions or changes are very welcome*
