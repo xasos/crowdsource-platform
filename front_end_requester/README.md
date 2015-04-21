@@ -26,4 +26,4 @@ This dashboard contains basic characteristics and can be used to create Worker´
 ##Requester Profile
 Contains a simple login page and a possible profile page for the Requester/Worker. This page contains,bio info, contact info, social networking, past projects, personal information, github feed. 
 
-*Any suggestins or changes are very welcome*
+*Any suggestions or changes are very welcome*
