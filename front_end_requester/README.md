@@ -19,7 +19,7 @@ This dashboard has 6 sections:
 6. Help - Any guidelines, rules and support available for the requester.
 
 Preview of Dashboard:
-![Preview of dashboard](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewDashboard.png | height = 100px )
+![Preview of dashboard](https://github.com/crowdresearch/crowdsource-platform/blob/front_end_bootstrap/front_end_requester/previewDashboard.png )
 
 
 This dashboard contains basic characteristics and can be used to create Worker´s dashboard.
