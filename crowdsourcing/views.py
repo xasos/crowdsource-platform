@@ -487,7 +487,7 @@ class MyProject(generics.ListCreateAPIView):
         project.save()
         return HttpResponseRedirect('/')
 
-    serializer_class = MyProjectSerializer
+    serializer_class = ProjectSerializer
 
     def get_queryset(self):
         projectid = self.request.QUERY_PARAMS.get('projectid', None)
