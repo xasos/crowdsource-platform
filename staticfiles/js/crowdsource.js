@@ -13,7 +13,12 @@ angular
     'crowdsource.layout',
     'crowdsource.home',
     'crowdsource.ranking',
-  ]);
+    'crowdsource.horizontallist',
+    'crowdsource.project'
+
+
+
+    ]);
 
 angular
   .module('crowdsource')

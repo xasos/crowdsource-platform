@@ -1,0 +1,274 @@
+<div ng-controller="HorizontalListController">
+            <div class="row text-center">
+            <h1 style="font-size: 25px;"> Your Projects</h1>
+        </div>
+    <div class="DocumentList">
+        <ul class="list-inline">
+            <li  class="DocumentItem" ng-repeat="hlists in projects">
+                 <a href="/project/{{ projects.indexOf(hlists)+1}}">
+                <div class="thumbnail">
+                <i class="fa fa-camera-retro fa-5x"></i>
+                    <div class="Photography">
+                        <h3>{{hlists.name}}</h3>
+                        <p> <a href="#"><span class="badge">{{hlists.keywords}}</span></a></p>
+                    </div>
+                </div>
+                </a>
+            </li>
+            <li class="DocumentItem DocumentItem-plus">
+                <a ng-href="/addproject">
+                    <i class="fa fa-plus fa-5x"></i>
+
+                </a>
+            </li>
+
+        </ul>
+    </div>
+<!--href="/project/{{ projects.indexOf(hlists)+1}}"-->
+    <hr>
+
+    <div class="row text-center">
+        <h1 style="font-size: 25px;"> Task Categories</h1>
+    </div>
+    <div class="DocumentList">
+        <!-- Page Features -->
+        <ul class="list-inline">
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-camera-retro fa-5x"></i>
+
+                    <div class="Photography">
+                        <h3>Photography</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">104 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-cogs fa-5x"></i>
+
+                    <div class="Engineering">
+                        <h3>Engineering</h3>
+
+                        <p>
+
+                            <a href="#"> <span class="badge">43 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-file-code-o fa-5x"></i>
+
+                    <div class="Programming">
+                        <h3>Programming</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">54 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-line-chart fa-5x"></i>
+
+                    <div class="Trend Analysis">
+                        <h3>Trend Analysis</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">50 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-line-chart fa-5x"></i>
+
+                    <div class="Trend Analysis">
+                        <h3>Trend Analysis</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">50 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-line-chart fa-5x"></i>
+
+                    <div class="Trend Analysis">
+                        <h3>Trend Analysis</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">50 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-line-chart fa-5x"></i>
+
+                    <div class="Trend Analysis">
+                        <h3>Trend Analysis</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">50 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="DocumentItem">
+                <div class="thumbnail">
+                    <i class="fa fa-line-chart fa-5x"></i>
+
+                    <div class="Trend Analysis">
+                        <h3>Trend Analysis</h3>
+
+                        <p>
+                            <a href="#"> <span class="badge">50 Tasks</span></a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- /.row -->
+    </div>
+    <hr>
+    <!-- /.row -->
+    <div class="row text-center">
+        <h1 style="font-size: 25px;"> Worker Tasks</h1>
+    </div>
+
+    <!-- Page Features -->
+    <div class="row text-center">
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-camera-retro fa-5x"></i>
+
+                <div class="Photography">
+                    <h3>Photography</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">104 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-cogs fa-5x"></i>
+
+                <div class="Engineering">
+                    <h3>Engineering</h3>
+
+                    <p>
+
+                        <a href="#"> <span class="badge">43 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-file-code-o fa-5x"></i>
+
+                <div class="Programming">
+                    <h3>Programming</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">54 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-line-chart fa-5x"></i>
+
+                <div class="Trend Analysis">
+                    <h3>Trend Analysis</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">50 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row text-center">
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-music fa-5x"></i>
+
+                <div class="Music">
+                    <h3>Music</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">144 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-sitemap fa-5x"></i>
+
+                <div class="Management">
+                    <h3>Management</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">142 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-pencil-square-o fa-5x"></i>
+
+                <div class="Writing">
+                    <h3>Writing</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">114 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <i class="fa fa-bar-chart fa-5x"></i>
+
+                <div class="Trend Analysis">
+                    <h3>Survey</h3>
+
+                    <p>
+                        <a href="#"> <span class="badge">190 Tasks</span></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>

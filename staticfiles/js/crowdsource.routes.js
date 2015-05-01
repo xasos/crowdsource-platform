@@ -12,13 +12,21 @@
   * @desc Define valid application routes
   */
   function config($routeProvider) {
-    $routeProvider.when('/', {
-      templateUrl: '/static/templates/intro.html',
+    $routeProvider
+
+    .when('/profile', {
+      templateUrl: '/static/templates/profile.html',
+      controller: 'ProfileController',
+        }).otherwise('/')
+
+    .when('/',{
+        templateUrl: '/static/templates/default.html',
+      controller: 'HomeController',
     }).otherwise('/')
 
-    .when('/home', {
-      templateUrl: '/static/templates/home.html',
-      controller: 'HomeController',
+    .when('/main',{
+        templateUrl: '/static/templates/catalog/main.html',
+      controller: 'HorizontalListController',
     }).otherwise('/')
 
     .when('/ranking', {
@@ -36,6 +44,17 @@
       controller: 'LoginController',
       controllerAs: 'vm',
       templateUrl: '/static/templates/authentication/login.html'
+    }).otherwise('/')
+
+
+        .when('/project/:ProjectID',
+      {
+          controller: 'ProjectDetailController',
+      templateUrl: '/static/templates/project/detail.html'
+      }).otherwise('/')
+   .when('/addproject', {
+      controller: 'AddProjectController',
+      templateUrl: '/static/templates/project/add.html'
     }).otherwise('/')
 
     .when('/terms', {
