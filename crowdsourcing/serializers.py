@@ -185,8 +185,3 @@ class RequesterRankingSerializer(serializers.ModelSerializer):
         model = models.RequesterRanking
 
 
-class MyProjectSerializer(serializers.ModelSerializer):
-    user_username = serializers.ReadOnlyField(source='user.username', read_only=True)
-
-    class Meta:
-        model = models.Project

@@ -13,7 +13,7 @@ from crowdsourcing.viewsets.requester import RequesterRankingViewSet, RequesterV
 from rest_framework.routers import SimpleRouter
 
 router = SimpleRouter()
-<<<<<<< HEAD
+
 router.register(r'profile',views.UserProfileViewSet)
 router.register(r'user', UserViewSet)
 router.register(r'requesterranking', RequesterRankingViewSet)
@@ -35,7 +35,7 @@ urlpatterns = patterns('',
     url(r'', include(router.urls)),
     url('^.*$', views.home, name='home'),
 )
-=======
+
 router.register(r'profile', views.UserProfileViewSet)
 
 urlpatterns = patterns('',
@@ -60,6 +60,6 @@ urlpatterns = patterns('',
                        url('^$', views.intro, name='intro'),
                        url('^home$', views.home, ),
                        )
->>>>>>> pr/14
+
 
 urlpatterns += staticfiles_urlpatterns()

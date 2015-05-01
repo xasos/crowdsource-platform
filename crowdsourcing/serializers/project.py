@@ -64,3 +64,8 @@ class QualificationApplicationSerializer(serializers.ModelSerializer):
 class QualificationItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.QualificationItem
+class MyProjectSerializer(serializers.ModelSerializer):
+    user_username = serializers.ReadOnlyField(source='user.username', read_only=True)
+
+    class Meta:
+        model = models.Project

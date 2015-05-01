@@ -20,11 +20,10 @@ from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 
-<<<<<<< HEAD
 import hashlib, random
-=======
+
 import hashlib, random  #, httplib2
->>>>>>> pr/14
+
 import re
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
@@ -448,8 +447,6 @@ def reset_password(request, reset_key, enable):
 
 
 #################################################
-<<<<<<< HEAD
-=======
 
 #@Todo neilthemathguy Security feature to API 
 class Requester(generics.ListCreateAPIView):
@@ -503,6 +500,3 @@ class MyProject(generics.ListCreateAPIView):
             return Project.objects.all()
 
 
-
-
->>>>>>> pr/14
