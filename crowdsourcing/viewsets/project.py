@@ -21,32 +21,73 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from crowdsourcing.serializers.project import *
 from rest_framework.decorators import detail_route, list_route
+from crowdsourcing.models import Category, Project
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.filter(deleted=False)
+    serializer_class = CategorySerializer
+
+    @detail_route(methods=['post'])
+    def update_category(self, request, id=None):
+        category_serializer = CategorySerializer(data=request.data)
+        category = self.get_object()
+        if category_serializer.is_valid():
+            category_serializer.update(category,category_serializer.validated_data)
+
+            return Response({'status': 'updated category'})
+        else:
+            return Response(category_serializer.errors,
+                            status=status.HTTP_400_BAD_REQUEST)
+
+    def list(self, request):
+        try:
+            category = Category.objects.all()
+            categoriess_serialized = CategorySerializer(category)
+            return Response(categoriess_serialized.data)
+        except:
+            return Response([])
+
+    def destroy(self, request, *args, **kwargs):
+        category_serializer = CategorySerializer()
+        category = self.get_object()
+        category_serializer.delete(category)
+        return Response({'status': 'deleted category'})
 
 
 class ProjectViewSet(viewsets.ModelViewSet):
-    from crowdsourcing.models import Project
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer()
-
-    lookup_value_regex = '[^/]+'
+    queryset = Project.objects.filter(deleted=False)
+    serializer_class = ProjectSerializer
 
     @detail_route(methods=['post'])
     def update_project(self, request, id=None):
-        serializer = ProjectSerializer(data=request.data)
+        project_serializer = ProjectSerializer(data=request.data)
         project = self.get_object()
-        if serializer.is_valid():
-            serializer.update(project,serializer.validated_data)
+        if project_serializer.is_valid():
+            project_serializer.update(project,project_serializer.validated_data)
 
             return Response({'status': 'updated project'})
         else:
-            return Response(serializer.errors,
+            return Response(project_serializer.errors,
                             status=status.HTTP_400_BAD_REQUEST)
 
-    @list_route()
-    def get_profile(self, request):
-        projects = ProjectSerializer.objects.all()
-        serializer = ProjectSerializer(projects)
-        return Response(serializer.data)
+    def list(self, request):
+        try:
+            projects = Project.objects.all()
+            projects_serialized = ProjectSerializer(projects)
+            return Response(projects_serialized.data)
+        except:
+            return Response([])
+
+    def destroy(self, request, *args, **kwargs):
+        project_serializer = ProjectSerializer()
+        project = self.get_object()
+        project_serializer.delete(project)
+        return Response({'status': 'deleted project'})
+
+    def retrieve(self, request, *args, **kwargs):
+        project = self.get_object()
+        project_serialized = ProjectSerializer(project)
+        return Response(project_serialized.data)
 
 
 class ModuleViewSet(viewsets.ModelViewSet):

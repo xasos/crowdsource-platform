@@ -8,21 +8,29 @@ from django.contrib import admin
 
 admin.autodiscover()
 from crowdsourcing import views
+from crowdsourcing.viewsets.project import *
 from crowdsourcing.viewsets.user import UserViewSet
 from crowdsourcing.viewsets.requester import RequesterRankingViewSet, RequesterViewSet
-from rest_framework.routers import SimpleRouter
 
+from rest_framework.routers import SimpleRouter
 router = SimpleRouter()
 
 router.register(r'profile',views.UserProfileViewSet)
 router.register(r'user', UserViewSet)
 router.register(r'requesterranking', RequesterRankingViewSet)
 router.register(r'requester', RequesterViewSet)
+router = SimpleRouter(trailing_slash=True)
+router.register(r'api/profile',views.UserProfileViewSet)
+router.register(r'api/user', UserViewSet)
+router.register(r'api/requesterranking', RequesterRankingViewSet)
+router.register(r'api/requester', RequesterViewSet)
+router.register(r'api/project', ProjectViewSet)
+router.register(r'api/category', CategoryViewSet)
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls) ),
-    url(r'^api/v1/auth/login/$', views.Login.as_view()),
-    url(r'^api/v1/auth/register/$', views.Registration.as_view()),
+    url(r'^api/v1/auth/login/$', views.Login.as_view()), #moved to /api/user/authenticate/
+    url(r'^api/v1/auth/register/$', views.Registration.as_view()), #moved to /api/user/
     url(r'^api/v1/auth/forgot-password/$',views.ForgotPassword.as_view()),
     url(r'^api/v1/auth/reset-password/(?P<reset_key>\w+)/(?P<enable>[0-1]*)/$',views.reset_password),
     url(r'^api/v1/auth/registration-successful',views.registration_successful),
