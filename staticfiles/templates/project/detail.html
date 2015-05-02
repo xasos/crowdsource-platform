@@ -1,43 +1,22 @@
+<div class="row">
+  <div class="col-md-9 center-block task-column">
 
-<div class="container">
 	<div class="row">
 
-    	 <div class="well profile">
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-6 col-lg-8">
                    <h2>{{myproject.name}}</h2>
-                    <hr/>
-
-
-                    <h2><strong>Deadline: </strong></h2>
-
-
-                        <div style="display:inline-block; min-height:290px;">
-        <datepicker ng-readonly="true"  ng-model="::myproject.deadline" min-date="myproject.deadline"     max-date="myproject.deadline" show-weeks="true" class="well well-sm"></datepicker>
-</div>
-
-
-                </div>
-             <div class="col-xs-6 col-lg-4">
- <h2><strong>Contributors: </strong>  </h2>
-
-
-                    <hr/>
-                 <p>
-                    <h2><strong>Categories: </strong></h2>
-
                         <span class="tags">html5</span>
                         <span class="tags">css3</span>
                         <span class="tags">jquery</span>
                         <span class="tags">bootstrap3</span>
-                    </p>
+                </div>
+             <div class="col-xs-6 col-lg-4">
+                    <h4><strong>Deadline:{{myproject.deadline}}</strong></h4>
                     </div>
 
                 </div>
 
-
-
-             </div>
         <div class="well">
 
              <tabset>
@@ -46,7 +25,7 @@
         Static content
 
     </tab>
-    <tab heading="Skills">
+    <tab heading="Collaborators">
 
         Static content
 
@@ -81,4 +60,10 @@
         </div>
             </div>
 
+
+  </div>
+  <div class="col-md-3 center-block bordered skill-column">
+      <h3 class="text-center">Skills</h3>
+
+  </div>
 </div>
