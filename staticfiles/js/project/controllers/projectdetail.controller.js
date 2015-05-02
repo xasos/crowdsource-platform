@@ -20,7 +20,7 @@
     var vm = this;
     var rp = $routeParams.ProjectID;
     $http.get('/api-auth/v1/project/own/?projectid='+rp).success(function(data, config){
-        $scope.myprojects=data[0];
+        $scope.myproject=data[0];
     });
 
 

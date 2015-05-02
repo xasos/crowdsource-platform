@@ -244,6 +244,8 @@ class Login(APIView):
                 response_data["last_name"] = self.user.last_name
                 response_data["date_joined"] = self.user.date_joined
                 response_data["last_login"] = self.user.last_login
+
+                login(request, self.user)
                 return Response(response_data, status=status.HTTP_201_CREATED)
                 #login(request, self.user)
                 #serializer = UserSerializer(self.user)
@@ -477,11 +479,11 @@ class MyProject(generics.ListCreateAPIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body.decode('utf-8'))
         name = data.get('project_name', '')
-        deadline_date = data.get('project_date', '')
-        deadline_time = data.get('project_time', '')
+        deadline_date = data.get('project_datetime', '')
+
         keywords = data.get('project_keywords', '')
 
-        _format = data.get('time_format','')
+
         from crowdsourcing.models import Project
         project = Project()
         project.name = name
@@ -491,7 +493,7 @@ class MyProject(generics.ListCreateAPIView):
         project.deadline=deadline_date
 
         project.save()
-        return HttpResponseRedirect('/')
+        return Response({"status": "CREATED" , "projectid":str(project.id)}, status=status.HTTP_201_CREATED)
 
     serializer_class = ProjectSerializer
 

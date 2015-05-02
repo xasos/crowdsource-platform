@@ -73,8 +73,8 @@ $scope.today = function() {
             project_keywords:vm.project_keywords
 
         }
-      }).success(function(){
-              $location.url('/');
+      }).success(function(data,config){
+              $location.url('/project/'+data.projectid);
           });
       }
   }
