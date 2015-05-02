@@ -11,22 +11,44 @@
           <h3 for="project_name">Project Name</h3>
           <input type="text" class="form-control" id="project_name" ng-model="vm.project_name"  placeholder="ex. Build a Website" />
         </div>
+
+          <div class="form-group">
 <h3>Deadline</h3>
 
 
 
 
-    <h4>Date</h4>
-    <div class="row">
+    <h4 for="project_date">Date</h4>
+  <div class="row">
         <div class="col-md-12">
             <p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <input type="text" id="project_date" class="form-control" datepicker-popup="dd-MMMM-yyyy" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
             </p>
         </div>
+
     </div>
+
+    <h4 for="project_time">Time</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <timepicker id="project_time" ng-model="dt" hour-step="1" minute-step="5" show-meridian="ismeridian"></timepicker>
+
+
+        </div>
+    </div>
+
+</div>
+          <div class="form-group">
+              <h3>Keywords</h3>
+
+              <div  >
+
+              <textarea id="project_keywords"  ng-model="vm.keywords" placeholder="This is sample Keywords, eg" class="form-control" rows="3"></textarea>
+                  </div>
+               </div>
 
 
 

@@ -22,6 +22,8 @@ $scope.today = function() {
   };
   $scope.today();
 
+
+
   $scope.clear = function () {
     $scope.dt = null;
   };
@@ -55,7 +57,7 @@ $scope.today = function() {
       var vm=this;
 
       $scope.postit=postit;
-            $scope.vm=vm;
+      $scope.vm=vm;
 
 
       function postit()
@@ -67,7 +69,8 @@ $scope.today = function() {
 
           project_name: vm.project_name,
 
-            project_date: $scope.dt
+            project_datetime: $scope.dt,
+            project_keywords:vm.project_keywords
 
         }
       }).success(function(){

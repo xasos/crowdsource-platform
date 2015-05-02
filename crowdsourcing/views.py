@@ -477,13 +477,19 @@ class MyProject(generics.ListCreateAPIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body.decode('utf-8'))
         name = data.get('project_name', '')
-        deadline = data.get('project_date', '')
+        deadline_date = data.get('project_date', '')
+        deadline_time = data.get('project_time', '')
+        keywords = data.get('project_keywords', '')
+
         _format = data.get('time_format','')
         from crowdsourcing.models import Project
         project = Project()
         project.name = name
+        project.keywords=keywords
+
         from datetime import datetime
-        project.deadline = datetime.now()
+        project.deadline=deadline_date
+
         project.save()
         return HttpResponseRedirect('/')
 
