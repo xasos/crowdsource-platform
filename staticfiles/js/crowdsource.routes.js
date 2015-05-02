@@ -50,6 +50,7 @@
         .when('/project/:ProjectID',
       {
           controller: 'ProjectDetailController',
+          controllerAs: 'vm',
       templateUrl: '/static/templates/project/detail.html'
       }).otherwise('/')
    .when('/addproject', {

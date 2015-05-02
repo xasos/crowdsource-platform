@@ -2,9 +2,6 @@
  * Created by milad on 5/1/15.
  */
 
-/**
- * Created by milad on 4/30/15.
- */
 
 
 (function () {
@@ -14,19 +11,18 @@
     .module('crowdsource.project.controllers')
     .controller('ProjectDetailController', ProjectDetailController);
 
-  ProjectDetailController.$inject = ['$scope','$http','$routeParams','Authentication'];
+  ProjectDetailController.$inject = ['$scope','$http','$routeParams'];
 
   /**
-  * @namespace AddProjectController
+  * @namespace ProjectDetailController
   */
-  function ProjectDetailController($scope,$http,$routeParams,Authentication) {
-$http.get('/api-auth/v1/project/own?projectid='+ $routeParams.ProjectID).success(function(data, config){
-   $scope.project=data[0];
-   });
+  function ProjectDetailController($scope,$http,$routeParams) {
+    var vm = this;
+    var rp = $routeParams.ProjectID;
+    $http.get('/api-auth/v1/project/own/?projectid='+rp).success(function(data, config){
+        $scope.myprojects=data[0];
+    });
 
-
-
-console.log($routeParams.ProjectID);
 
   }
 

@@ -493,7 +493,6 @@ class MyProject(generics.ListCreateAPIView):
         projectid = self.request.QUERY_PARAMS.get('projectid', None)
         if projectid is not None:
             queryset= Project.objects.filter(id=projectid)
-
             return queryset
 
         else:
