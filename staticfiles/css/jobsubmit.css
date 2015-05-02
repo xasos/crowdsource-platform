@@ -1,0 +1,15 @@
+.bordered {
+	border: thin outset gray;
+	border-radius: 2px;
+}
+
+.skill-column
+{
+    height: 500px;
+    margin-bottom: 50px;
+}
+.task-column
+{
+    height: auto;
+    margin-bottom: 50px;
+}
