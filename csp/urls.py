@@ -66,7 +66,7 @@ urlpatterns = patterns('',
 
                        url(r'', include(router.urls)),
                        url('^$', views.intro, name='intro'),
-                       url('^home$', views.home, ),
+                       url('^.*$', views.home, name='home'),
                        )
 
 
