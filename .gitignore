@@ -106,3 +106,6 @@ bower_components
 static/bower_components
 # PyCharm
 .idea/
+
+node_modules/
+crowdsource_dev
